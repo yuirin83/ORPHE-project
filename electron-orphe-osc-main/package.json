@@ -1,0 +1,16 @@
+{
+  "name": "electron-orphe-osc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electrom": "^19.0.13",
+    "electron": "^21.3.3",
+    "osc-js": "^2.4.0"
+  }
+}
