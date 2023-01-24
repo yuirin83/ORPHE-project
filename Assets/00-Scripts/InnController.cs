@@ -19,9 +19,10 @@ public class InnController : MonoBehaviour
     void Update()
     {
         gameNum = OscReceive.oscNum;
-        Debug.Log(gameNum);
+        // Debug.Log(EnvironmentController.envStatus);
 
         operateInput();
+        innAction();
 
         if(Input.GetKeyDown(KeyCode.Q)){
             EnvironmentController.envStatus = 0;
@@ -34,6 +35,9 @@ public class InnController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.W)){
             EnvironmentController.envStatus = 3;
+        }
+        if(Input.GetKeyDown(KeyCode.E)){
+            EnvironmentController.envStatus = 4;
         }
     }
 
@@ -50,10 +54,14 @@ public class InnController : MonoBehaviour
             case 3:
                 if(inputReady) timerDirector.nowCounting = false;
                 break;
+            // case 4:
+            //     EnvironmentController.envStatus = 1;
+            //     break;
         }
     }
 
     public void innAction(){
+        
         if(inputReady){
             if( gameNum == 4 ){
                 EnvironmentController.envStatus = 1;
@@ -61,6 +69,8 @@ public class InnController : MonoBehaviour
                 EnvironmentController.envStatus = 2;
             }else if( gameNum == 6){
                 EnvironmentController.envStatus = 3;
+            }else if( gameNum == 7){
+                EnvironmentController.envStatus = 4;
             }
         }
     }
